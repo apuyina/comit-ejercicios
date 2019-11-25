@@ -1,0 +1,68 @@
+<h1>Crear</h1>
+
+<form method="POST" action="http://localhost:3000/api/perros">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" autofocus required>
+    <label for="color">Color</label>
+    <input type="color" id="color" name="color" required>
+    <button type="submit">Crear</button>
+</form>
+
+<hr />
+
+<h2>Borrar</h2>
+
+<form onsubmit="borrar_perro(event)">
+    <label for="id_perro">ID perro</label>
+    <input id="id_perro" name="id_perro">
+    <button type="submit">Borrar</button>
+</form>
+
+<hr />
+
+<h2>Actualizar</h2>
+
+<form onsubmit="actualizar_perro(event)" id="actualizar">
+    <label for="id_perro">ID perro</label>
+    <input id="id_perro" name="id_perro">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" autofocus required>
+    <label for="color">Color</label>
+    <input type="color" id="color" name="color" required>
+    <button type="submit">Actualizar</button>
+</form>
+
+<script>
+async function borrar_perro(e) {
+    e.preventDefault()
+    var id = document.querySelector('input[id="id_perro"]').value
+    var respuesta = await fetch('http://localhost:3000/api/perros', {
+        method: 'DELETE',
+        headers: { id_perro: id }
+    })
+    var texto = await respuesta.text()
+    alert(texto)
+}
+
+async function actualizar_perro(e) {
+    e.preventDefault()
+    var id = document.querySelector('form[id="actualizar"] input[id="id_perro"]').value
+    var nombre = document.querySelector('form[id="actualizar"] input[id="color"]').value
+    var color = document.querySelector('form[id="actualizar"] input[id="nombre"]').value
+    var respuesta = await fetch('http://localhost:3000/api/perros', {
+        method: 'PATCH',
+        headers: {
+            id_perro: id,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nombre: nombre,
+            color: color
+        })
+    })
+    var texto = await respuesta.text()
+    alert(texto)
+}
+
+</script>
+
