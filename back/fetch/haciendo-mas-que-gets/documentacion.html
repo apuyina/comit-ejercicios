@@ -1,0 +1,55 @@
+<html style="font-family:'Palatino';font-size: 18px;line-height: 1.5;">
+<meta charset="utf-8">
+
+<body style="max-width:800px;margin:auto;">
+    <h1 style="text-align:center;padding:20px;border:5px solid #333">Documentación</h1>
+
+    <h2 style="font-weight: 400;color:mediumblue;">Autentificarse</h2>
+
+    <ul>
+        <li>Endpoint: <code>/login</code></li>
+        <li>Método: GET</li>
+        <li>Respuesta: token para autentificarse</li>
+    </ul>
+
+    <h2 style="font-weight: 400;color:mediumblue;">Mensajes</h2>
+
+    <h3 style="font-weight:600">Leer</h3>
+
+    <ul>
+        <li>Endpoint: <code>/mensajes</code></li>
+        <li>Método: GET</li>
+        <li>Headers
+            <ul>
+                <li>token: [token obtenido al autentificarse]</li>
+            </ul>
+        </li>
+        <li>Respuesta: lista de mensajes</li>
+    </ul>
+
+    <h3 style="font-weight:600">Crear</h3>
+
+    <ul>
+        <li>Endpoint: <code>/mensajes</code></li>
+        <li>Método: POST</li>
+        <li>Headers
+            <ul>
+                <li>token: [token obtenido al autentificarse]</li>
+            </ul>
+        </li>
+        <li>Respuesta: Identificador del mensaje</li>
+    </ul>
+
+    <h3 style="font-weight:600">Modificar</h3>
+
+    <ul>
+        <li>Endpoint: <code>/mensajes</code></li>
+        <li>Método: PATCH</li>
+        <li>Body: texto</li>
+        <li>Headers
+            <ul>
+                <li>token: [token obtenido al autentificarse]</li>
+                <li>id: [identificador del mensaje]</li>
+            </ul>
+        </li>
+    </ul>

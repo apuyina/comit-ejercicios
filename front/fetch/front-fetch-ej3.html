@@ -1,0 +1,29 @@
+<!--Crear una página que cuando se le presione un botón haga un fetch de
+     https://msn-comit.herokuapp.com/doc, pero con un header pastafrola:
+      'membrillo', y muestre el contenido dentro (innerHTML) de un 
+      elemento HTML div creado en la página. Este div debe tener los siguientes estilos:-->
+
+    
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css" href="front-fetch-ej3.css">
+         <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <button onclick="obtener()">FETCH</button>
+        <div class="contenido"></div>
+            <script>
+                var url = 'https://msn-comit.herokuapp.com/doc'
+                async function obtener() {
+                var resultado = await fetch(url, {
+                    headers: {
+                        'Pastafrola': 'membrillo'
+                    }
+                })
+                var contenido = await resultado.text()
+                document.querySelector('.contenido').innerHTML = contenido
+                console.log(contenido)
+            }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!--GET simple
+ Crear una página que cuando se le presione un botón haga un fetch de https://emoji-aleatorio.herokuapp.com/emoji
+y muestre el resultado en un alert.
+-->
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<button onclick="emoji()">emoji</button>
+    <script>
+        var url = "https://emoji-aleatorio.herokuapp.com/emoji"
+        
+        async function emoji() {
+            var respuesta = await fetch(url, {
+                mode:"no-cors",
+                method: 'GET'
+            })
+            var contenido = await respuesta.text()
+            alert(contenido)
+        }
+        </script>
+</body>
+</html>

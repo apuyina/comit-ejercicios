@@ -1,0 +1,24 @@
+<!--Crear una página que cuando se le presione un botón haga un fetch a https://emoji-aleatorio.herokuapp.com/emoji y muestre el emoji resultante en un elemento HTML h1, el elemento HTML puede o no existir de antes que se haga el fetch. Solo se debe mostrar el valor del atributo emoji que reciba.-->
+
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    </head>
+    <body>
+        <button onclick="obtener()">FETCH</button>
+        <div class="contenido"></div>
+            <script>
+                var url = 'https://emoji-aleatorio.herokuapp.com/emoji'
+                async function obtener() {
+                	var resultado = await fetch(url, {
+                		mode: 'no-cors',
+                		method: 'GET',
+                	})
+                	var emojion = await resultado.json()
+
+                	console.log(emojion)
+                	alert(emojion.emoji)
+                }
+            </script>
+        </body>
+</html>

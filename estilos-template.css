@@ -1,0 +1,8 @@
+body {
+  background-color: #@secundario@
+}h1, h2, h3 {
+  background-color: #@secundario@
+  color: #@primario@
+}main {
+  border: 5px solid #@primario@
+}

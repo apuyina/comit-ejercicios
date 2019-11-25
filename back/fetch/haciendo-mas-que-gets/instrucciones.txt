@@ -1,0 +1,12 @@
+## Haciendo más que GETs
+
+Para estos ejercicios vamos a interactuar con el endpoint `https://msn-comit.herokuapp.com`.
+
+Para saber cómo interactuar con este endpoint pueden acceder a `https://msn-comit.herokuapp.com/doc` con el header: `Pastafrola: membrillo`. Les recomiendo guardarse la respuesta en un archivo, así pueden consultarlo con facilidad.
+
+Siguiendo la documentación:
+
+1. Registrarse.
+2. Subir un mensaje.
+3. Ver sus mensajes.
+4. Actualizar un mensaje.

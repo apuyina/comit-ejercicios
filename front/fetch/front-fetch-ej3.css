@@ -1,0 +1,9 @@
+div.contenido {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+    border: 5px solid #333;
+    background: lime;
+    overflow: scroll;
+}
