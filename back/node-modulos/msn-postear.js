@@ -15,10 +15,10 @@ var url = 'https://msn-comit.herokuapp.com/mensajes'
 
 async function postear() {
 	var respuesta = await fetch(url, {
-		method: 'POST'
+		method: 'POST',
 		Headers: {
 			token: '5ec945bd192d1c1f6434'
-		}
+		},
 		body: 'Hola mundo'
 	})
     var posteo = await respuesta.text()
